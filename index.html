@@ -3,72 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question and Answer Box</title>
-<link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <title>Love You Naina !</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 50px;
         }
-        .qa-container {
-            margin-top: 20px;
+        h1 {
+            font-size: 3em;
+            color: #e63946;
         }
-        label {
-            display: block;
-            margin: 10px 0 5px;
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
         }
-        textarea, input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .heart {
+            font-size: 5em;
+            color: #e63946;
         }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
+        .footer {
+            margin-top: 50px;
+            font-size: 1.2em;
+            color: #555;
         }
     </style>
 </head>
 <body>
+    <h1>I Love You</h1>
+    <p class="heart">❤️</p>
+    <p>Su kare chhe? <br>KEm chhe?,<br>
+    </p>
+    <p>You are my everything, my heart, my soul.<br>
+    With you, I feel complete.</p>
 
-    <h1>Question and Answer Box</h1>
-
-    <form id="qaForm">
-        <div class="qa-container">
-            <label for="question">Question:</label>
-            <textarea id="question" name="question" rows="4" required></textarea>
-
-            <label for="answer">Answer:</label>
-            <input type="text" id="answer" name="answer" required />
-
-            <input type="submit" value="Submit" />
-        </div>
-    </form>
-
-    <script>
-        document.getElementById('qaForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-
-            const question = document.getElementById('question').value;
-            const answer = document.getElementById('answer').value;
-
-            // You can handle the question and answer here, e.g., send to a server or display on the page
-            console.log('Question:', question);
-            console.log('Answer:', answer);
-
-            // Clear the input fields after submission
-            document.getElementById('question').value = '';
-            document.getElementById('answer').value = '';
-        });
-    </script>
-
+  <div class="footer">
+  <p>Forever Yours</p>
+    </div>
 </body>
 </html>
