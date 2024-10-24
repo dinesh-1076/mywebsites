@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question and Answer Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .qa-container {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .qa-list {
+            margin-top: 20px;
+        }
+        .qa-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Question and Answer Box</h1>
+
+    <form id="qaForm">
+        <div class="qa-container">
+            <label for="question">Question:</label>
+            <textarea id="question" name="question" rows="4" required></textarea>
+
+            <label for="answer">Answer:</label>
+            <input type="text" id="answer" name="answer" required />
+
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+    <div class="qa-list" id="qaList"></div>
+
+    <script>
+        document.getElementById('qaForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            const question = document.getElementById('question').value;
+            const answer = document.getElementById('answer').value;
+
+            // Create a new QA item and append it to the list
+            const qaItem = document.createElement('div');
+            qaItem.className = 'qa-item';
+            qaItem.innerHTML = `<strong>Q:</strong> ${question}<br><strong>A:</strong> ${answer}`;
+            document.getElementById('qaList').appendChild(qaItem);
+
+            // Clear the input fields after submission
+            document.getElementById('question').value = '';
+            document.getElementById('answer').value = '';
+        });
+    </script>
+
+</body>
+</html>
